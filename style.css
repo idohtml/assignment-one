@@ -1,7 +1,7 @@
 /* Import Rubik font from google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap");
 
-/* CSS Style reset */
+/* CSS default reset */
 
 /* Box sizing rules */
 *,
@@ -33,6 +33,7 @@ ol[role="list"] {
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
+  font-family: "Rubik", sans-serif;
 }
 
 /* Set core body defaults */
@@ -81,4 +82,29 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  list-style: none;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.nav-box {
+  display: flex;
+  align-items: center;
 }
