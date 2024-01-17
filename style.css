@@ -3,11 +3,32 @@
 
 /* CSS default reset */
 
+/* root styles & colors */
+:root {
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-2xl: 28px;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 500;
+  --fw-bold: 600;
+  --fw-black: 700;
+
+  --bg-primary: hsl(34, 64%, 94%);
+  --bg-secondary: hsl(21, 55%, 58%);
+  --bg-secondary-hover: hsl(21, 65%, 58%);
+  --text-color: hsl(156, 16%, 6%);
+}
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* Remove default margin */
@@ -33,12 +54,14 @@ ol[role="list"] {
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
-  font-family: "Rubik", sans-serif;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--bg-primary);
+
+  min-height: 100dvh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -60,20 +83,11 @@ picture {
   shape-margin: 0.75rem;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
@@ -84,27 +98,199 @@ select {
   }
 }
 
-/* Header */
+/* Button styles */
+.btn {
+  cursor: pointer;
+}
 
+.btn-primary {
+  background-color: var(--bg-secondary);
+  padding: 4px 24px;
+  border: 0;
+  border-radius: 12px;
+  transition: transform 300ms ease; /* Corrected the duration unit */
+}
+
+.btn-primary:hover {
+  background-color: var(--bg-secondary-hover);
+  transform: translateY(2px);
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  font-size: var(--font-md);
+  font-weight: var(--fw-light);
 }
 
-.header nav ul {
+.logo {
+  width: 85px;
+}
+
+.header a:last-child {
+  display: none;
+}
+
+.navbar {
+  display: none;
+}
+
+.navbar ul {
   display: flex;
-  align-items: center;
-  gap: 12px;
-
-  list-style: none;
+  gap: 48px;
+  font-size: var(--font-md);
+  font-weight: var(--fw-regular);
 }
 
-.header h2 {
-  margin: 0;
+/* Burger menu & Animation */
+
+.ham {
+  cursor: pointer;
+  transition: transform 400ms;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
-.nav-box {
-  display: flex;
-  align-items: center;
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #000;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+
+/* section */
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+/* grid */
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  place-items: center;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* hero section */
+.section-hero {
+  height: 100dvh;
+}
+
+.section-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-hero h1 {
+  font-size: var(--font-2xl);
+  font-weight: var(--fw-black);
+  margin: 40px 0;
+}
+
+/* Media queries */
+@media screen and (min-width: 600px) {
+  :root {
+    --font-sm: 16px;
+    --font-md: 18px;
+    --font-lg: 24px;
+    --font-xl: 26px;
+    --font-2xl: 32px;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+  }
+
+  .header {
+    justify-content: space-between;
+    margin: 0 40px;
+  }
+
+  .header a {
+    color: black;
+    display: inline;
+    text-decoration: none;
+  }
+
+  .header a:last-child {
+    display: inline;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .section-hero {
+    height: 60vh;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  :root {
+    --font-sm: 16px;
+    --font-md: 18px;
+    --font-lg: 24px;
+    --font-xl: 32px;
+    --font-2xl: 48px;
+  }
 }
