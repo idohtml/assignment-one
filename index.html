@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="main.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <title>Assignment One</title>
   </head>
   <body>
@@ -46,14 +54,44 @@
           </ul>
         </nav>
       </div>
-      <a class="btn btn-primary">shop</a>
+      <div class="cart-box">
+        <a class="btn btn-primary">shop</a>
+        <ion-icon name="bag-outline" size="large"></ion-icon>
+      </div>
     </header>
     <main>
       <section class="section-hero">
         <img src="images/library.jpg" alt="Library" />
         <div class="container">
-          <h1>New Arrived</h1>
-          <div></div>
+          <div class="section-hero-cards">
+            <h1>New Arrivals</h1>
+            <div class="hero-cards">
+              <div class="hero-card">
+                <div class="bg-color">
+                  <img src="images/bookheaven.png" alt="Book Heaven logo" />
+                </div>
+                <h2>Lorem.</h2>
+              </div>
+              <div class="hero-card">
+                <div class="bg-color">
+                  <img src="images/branch.png" alt="Branch Logo" />
+                </div>
+                <h2>Lorem.</h2>
+              </div>
+              <div class="hero-card">
+                <div class="bg-color">
+                  <img src="images/leaf.png" alt="Leaf growth logo" />
+                </div>
+                <h2>Lorem.</h2>
+              </div>
+              <div class="hero-card">
+                <div class="bg-color">
+                  <img src="images/stacks.png" alt="Stack of books logo" />
+                </div>
+                <h2>Lorem.</h2>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

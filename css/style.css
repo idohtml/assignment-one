@@ -3,6 +3,14 @@
 
 /* CSS default reset */
 
+/* 
+  Primary: 34, 64%, 94%
+  CARD 1: 19, 59%, 68%
+  CARD 2: 21, 80%, 71%
+  CARD 3: 16, 59%, 56%
+  CARD 4: 40, 7%, 64%
+*/
+
 /* root styles & colors */
 :root {
   --font-sm: 14px;
@@ -17,9 +25,12 @@
   --fw-bold: 600;
   --fw-black: 700;
 
-  --bg-primary: hsl(34, 64%, 94%);
-  --bg-secondary: hsl(21, 55%, 58%);
-  --bg-secondary-hover: hsl(21, 65%, 58%);
+  --bg-primary: hsl(30, 75%, 94%);
+  --bg-secondary: hsl(19, 59%, 68%);
+  --bg-secondary-hover: hsl(19, 59%, 60%);
+  --bg-third: hsl(21, 80%, 71%);
+  --bg-forth: hsl(16, 59%, 56%);
+  --bg-fifth: hsl(40, 7%, 64%);
   --text-color: hsl(156, 16%, 6%);
 }
 
@@ -105,9 +116,10 @@ picture {
 
 .btn-primary {
   background-color: var(--bg-secondary);
-  padding: 4px 24px;
   border: 0;
   border-radius: 12px;
+  font-weight: var(--fw-regular);
+  padding: 4px 24px;
   transition: transform 300ms ease; /* Corrected the duration unit */
 }
 
@@ -190,9 +202,15 @@ picture {
   stroke-dashoffset: -138px;
 }
 
+.cart-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 /* section */
 .container {
-  max-width: 1480px;
+  max-width: 1650px;
   margin: 0 auto;
 }
 
@@ -233,6 +251,60 @@ picture {
   font-size: var(--font-2xl);
   font-weight: var(--fw-black);
   margin: 40px 0;
+}
+
+.section-hero-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.section__line {
+  margin-top: 24px;
+  border-bottom: 2px solid var(--bg-fifth);
+}
+
+.hero-cards {
+  display: flex;
+  gap: 48px;
+
+  margin-top: 24px;
+}
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-card .bg-color {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.hero-card .bg-color img {
+  width: 100px;
+  object-fit: contain;
+}
+
+.hero-card:nth-child(1) .bg-color {
+  background-color: var(--bg-secondary);
+}
+
+.hero-card:nth-child(2) .bg-color {
+  background-color: var(--bg-third);
+}
+
+.hero-card:nth-child(3) .bg-color {
+  background-color: var(--bg-forth);
+}
+
+.hero-card:nth-child(4) .bg-color {
+  background-color: var(--bg-fifth);
 }
 
 /* Media queries */
