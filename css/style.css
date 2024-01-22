@@ -127,7 +127,7 @@ picture {
   &:hover {
     background-color: var(--bg-secondary-hover);
     transform: translateY(2px);
-    box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 }
 
