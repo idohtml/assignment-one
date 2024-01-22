@@ -99,6 +99,7 @@ picture {
   html:focus-within {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -120,7 +121,8 @@ picture {
   border-radius: 12px;
   font-weight: var(--fw-regular);
   padding: 4px 24px;
-  transition: transform 300ms ease; /* Corrected the duration unit */
+  transition: transform 300ms ease;
+  /* Corrected the duration unit */
 }
 
 .btn-primary:hover {
@@ -180,7 +182,9 @@ picture {
 
 .line {
   fill: none;
-  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  transition:
+    stroke-dasharray 400ms,
+    stroke-dashoffset 400ms;
   stroke: #000;
   stroke-width: 4;
   stroke-linecap: round;
@@ -226,12 +230,15 @@ picture {
 .grid-cols-1 {
   grid-template-columns: repeat(1, 1fr);
 }
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, 1fr);
 }
+
 .grid-cols-3 {
   grid-template-columns: repeat(3, 1fr);
 }
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, 1fr);
 }
