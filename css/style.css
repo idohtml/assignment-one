@@ -94,43 +94,6 @@ picture {
   shape-margin: 0.75rem;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Button styles */
-.btn {
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: var(--bg-secondary);
-  border: 0;
-  border-radius: 12px;
-  font-weight: var(--fw-regular);
-  padding: 4px 24px;
-  transition: transform 300ms ease;
-  /* Corrected the duration unit */
-
-  &:hover {
-    background-color: var(--bg-secondary-hover);
-    transform: translateY(2px);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
-}
-
 /* Header */
 .header {
   display: flex;
@@ -143,10 +106,10 @@ picture {
   & a:last-child {
     display: none;
   }
-}
 
-.logo {
-  width: 85px;
+  .logo {
+    width: 85px;
+  }
 }
 
 .navbar {
@@ -208,37 +171,6 @@ picture {
   display: none;
   align-items: center;
   gap: 18px;
-}
-
-/* section */
-.container {
-  max-width: 1650px;
-  margin: 0 auto;
-}
-
-/* grid */
-.grid {
-  display: grid;
-}
-
-.grid-center {
-  place-items: center;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(1s, 1fr);
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(1, 1fr);
 }
 
 /* hero section */
@@ -307,12 +239,6 @@ picture {
   background-color: var(--bg-fifth);
 }
 
-/* article section */
-.article-title {
-  font-size: var(--font-xl);
-  margin: 24px 0;
-}
-
 /* books */
 
 .books {
@@ -333,7 +259,95 @@ picture {
   }
 }
 
+/* Event section */
+.section-events {
+  background-color: var(--bg-fitth);
+}
+
+/* COMPONENT BASED STYLES STARTS HERE */
+/* 
+  These are styles that will be used for global components that should always stay the same
+  An example of this will be buttons and it's variations for example you can have a 
+  primary button, secondary button or maybe for links you might want your button to 
+  look and feel as regular text but have a underline and maybe change it's color to blue.
+*/
+
+/* section */
+.container {
+  max-width: 1650px;
+  margin: 0 auto;
+}
+
+/* grid */
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  place-items: center;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(1s, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* Button styles */
+.btn {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--bg-secondary);
+  border: 0;
+  border-radius: 12px;
+  font-weight: var(--fw-regular);
+  padding: 4px 24px;
+  transition: transform 300ms ease;
+  /* Corrected the duration unit */
+
+  &:hover {
+    background-color: var(--bg-secondary-hover);
+    transform: translateY(2px);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}
+
+/* Headings */
+.heading-title {
+  font-size: var(--font-lg);
+  margin: 24px 0;
+}
+
 /* Media queries */
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @media screen and (min-width: 600px) {
   :root {
     --font-sm: 16px;
@@ -358,20 +372,20 @@ picture {
     color: black;
     display: inline;
     text-decoration: none;
-  }
 
-  .header a:last-child {
-    display: inline;
+    & a:last-child {
+      display: inline;
+    }
   }
 
   .navbar {
     display: flex;
     align-items: center;
-  }
 
-  .navbar nav {
-    display: flex;
-    align-items: center;
+    & nav {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .burger {
@@ -429,6 +443,11 @@ picture {
 }
 
 @media screen and (min-width: 1400px) {
+  :root {
+    --font-xl: 48px;
+    --font-2xl: 54px;
+  }
+
   .grid-cols-3 {
     grid-template-columns: repeat(3, 1fr);
   }
